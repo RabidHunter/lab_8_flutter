@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './reset_password_screen.dart';
-import './sign_up_screen.dart';
+import './signup_screen.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
