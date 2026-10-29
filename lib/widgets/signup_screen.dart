@@ -22,12 +22,14 @@ class SignupScreen extends StatelessWidget {
 
             const TextField(
               decoration: InputDecoration(
-                labelText: 'Email',
+                border: OutlineInputBorder(),
+                labelText: 'Електронна пошта',
               ),
             ),
             const SizedBox(height: 16.0),
             const TextField(
               decoration: InputDecoration(
+                border: OutlineInputBorder(),
                 labelText: 'Логін',
               ),
             ),
@@ -35,6 +37,7 @@ class SignupScreen extends StatelessWidget {
             const TextField(
               obscureText: true,
               decoration: InputDecoration(
+                border: OutlineInputBorder(),
                 labelText: 'Пароль',
               ),
             ),
@@ -46,16 +49,16 @@ class SignupScreen extends StatelessWidget {
                   child: SizedBox(
                     height: 48,
                     child: ElevatedButton(
-                      onPressed: () {
+                      onPressed: () => {
                         showDialog(
                           context: context,
                           builder: (BuildContext ctx) {
                             return const AlertDialog(
-                              title: Text('Повідомлення'),
-                              content: Text("Реєстрацію виконано успішно"),
+                              title: Text('Message'),
+                              content: Text("Need to implement"),
                             );
                           },
-                        );
+                        )
                       },
                       child: const Text("Sign up"),
                     ),
@@ -66,8 +69,8 @@ class SignupScreen extends StatelessWidget {
                   child: SizedBox(
                     height: 48,
                     child: OutlinedButton(
-                      onPressed: () {
-                        Navigator.pop(context);
+                      onPressed: () => {
+                        Navigator.pop(context)
                       },
                       child: const Text("Back"),
                     ),
@@ -75,6 +78,7 @@ class SignupScreen extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 24.0),
           ],
         ),
       ),

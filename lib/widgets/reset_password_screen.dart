@@ -26,12 +26,12 @@ class ResetPasswordScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 15, color: Colors.black54),
               ),
             ),
-            const SizedBox(height: 32.0),
-
+            const SizedBox(height: 48.0),
             const TextField(
               keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
-                labelText: 'Email',
+                border: OutlineInputBorder(),
+                labelText: 'Електронна пошта',
               ),
             ),
             const SizedBox(height: 24.0),
@@ -42,16 +42,16 @@ class ResetPasswordScreen extends StatelessWidget {
                   child: SizedBox(
                     height: 48,
                     child: ElevatedButton(
-                      onPressed: () {
+                      onPressed: () => {
                         showDialog(
                           context: context,
                           builder: (BuildContext ctx) {
                             return const AlertDialog(
-                              title: Text('Повідомлення'),
-                              content: Text("Запит на скидання пароля надіслано"),
+                              title: Text('Message'),
+                              content: Text("Need to implement"),
                             );
                           },
-                        );
+                        )
                       },
                       child: const Text("Reset"),
                     ),
@@ -62,8 +62,8 @@ class ResetPasswordScreen extends StatelessWidget {
                   child: SizedBox(
                     height: 48,
                     child: OutlinedButton(
-                      onPressed: () {
-                        Navigator.pop(context);
+                      onPressed: () => {
+                        Navigator.pop(context)
                       },
                       child: const Text("Back"),
                     ),
@@ -71,6 +71,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 24.0),
           ],
         ),
       ),

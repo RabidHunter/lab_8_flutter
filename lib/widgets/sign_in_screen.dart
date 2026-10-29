@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './reset_password_screen.dart';
-import './signup_screen.dart';
+import './sign_up_screen.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -14,32 +14,30 @@ class SignInScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const SizedBox(height: 48.0),
-
             const TextField(
               decoration: InputDecoration(
-                labelText: 'Логін',
+                border: OutlineInputBorder(),
+                labelText: 'Електронна пошта',
               ),
             ),
             const SizedBox(height: 16.0),
             const TextField(
-              obscureText: true,
               decoration: InputDecoration(
+                border: OutlineInputBorder(),
                 labelText: 'Пароль',
               ),
             ),
             const SizedBox(height: 8.0),
-
             Align(
               alignment: Alignment.centerRight,
               child: TextButton(
-                onPressed: () {
+                onPressed: () => {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => const ResetPasswordScreen(),
                     ),
-                  );
+                  )
                 },
                 child: const Text("Забули пароль?"),
               ),
@@ -52,16 +50,16 @@ class SignInScreen extends StatelessWidget {
                   child: SizedBox(
                     height: 48,
                     child: ElevatedButton(
-                      onPressed: () {
+                      onPressed: () => {
                         showDialog(
                           context: context,
                           builder: (BuildContext ctx) {
                             return const AlertDialog(
-                              title: Text('Повідомлення'),
-                              content: Text("Авторизацію виконано успішно"),
+                              title: Text('Message'),
+                              content: Text("Need to implement"),
                             );
                           },
-                        );
+                        )
                       },
                       child: const Text("Login"),
                     ),
@@ -72,13 +70,13 @@ class SignInScreen extends StatelessWidget {
                   child: SizedBox(
                     height: 48,
                     child: OutlinedButton(
-                      onPressed: () {
+                      onPressed: () => {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => const SignupScreen(),
                           ),
-                        );
+                        )
                       },
                       child: const Text("Sign up"),
                     ),
@@ -86,6 +84,7 @@ class SignInScreen extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 24.0),
           ],
         ),
       ),
